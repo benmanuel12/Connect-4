@@ -1,0 +1,36 @@
+(define check-win-h (lambda (board)
+  (for [(i '(1 2 3 4))]
+    if (vector-ref (vector-ref board 0) i) == (vector-ref (vector-ref board 0) i+1) == (vector-ref (vector-ref board 0) i+2) == (vector-ref (vector-ref board 0) i+3):
+      (send won-window show #t))
+  (for [(i '(1 2 3 4))]
+    if (vector-ref (vector-ref board 1) i) == (vector-ref (vector-ref board 1) i+1) == (vector-ref (vector-ref board 1) i+2) == (vector-ref (vector-ref board 1) i+3):
+      (send won-window show #t))
+  (for [(i '(1 2 3 4))]
+    if (vector-ref (vector-ref board 2) i) == (vector-ref (vector-ref board 2) i+1) == (vector-ref (vector-ref board 2) i+2) == (vector-ref (vector-ref board 2) i+3):
+      (send won-window show #t))
+  (for [(i '(1 2 3 4))]
+    if (vector-ref (vector-ref board 3) i) == (vector-ref (vector-ref board 3) i+1) == (vector-ref (vector-ref board 3) i+2) == (vector-ref (vector-ref board 3) i+3):
+      (send won-window show #t))
+  (for [(i '(1 2 3 4))]
+    if (vector-ref (vector-ref board 4) i) == (vector-ref (vector-ref board 4) i+1) == (vector-ref (vector-ref board 4) i+2) == (vector-ref (vector-ref board 4) i+3):
+      (send won-window show #t))
+  (for [(i '(1 2 3 4))]
+    if (vector-ref (vector-ref board 5) i) == (vector-ref (vector-ref board 5) i+1) == (vector-ref (vector-ref board 5) i+2) == (vector-ref (vector-ref board 5) i+3):
+      (send won-window show #t))
+  )
+)
+
+(for [(i '(0 1 2 3))]
+  (cond
+    ((and (not (equal? (vector-ref (vector-ref board 0) i) 0))
+          (not (equal? (vector-ref (vector-ref board 0) (+ 1 i) 0))
+          (not (equal? (vector-ref (vector-ref board 0) (+ 2 i) 0)) 
+          (not (equal? (vector-ref (vector-ref board 0) (+ 3 i) 0)) 
+          (equal? 
+            (vector-ref (vector-ref board 0) i)
+            (vector-ref (vector-ref board 0) (+ 1 i))
+            (vector-ref (vector-ref board 0) (+ 2 i))
+            (vector-ref (vector-ref board 0) (+ 3 i))
+            ))
+      (send won-window show #t) 
+      )
